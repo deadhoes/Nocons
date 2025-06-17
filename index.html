@@ -1,60 +1,496 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Nocons Icon Library</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script type="module" src="https://unpkg.com/lucide@latest/dist/esm/lucide.js"></script>
-    <style>
-      body { font-family: monospace; }
-    </style>
-  </head>
-  <body class="bg-zinc-900 text-white min-h-screen px-6 py-10">
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <title>Nocons Icon Library Docs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/lucide@latest/dist/esm/lucide.js"></script>
+  <style>
+    body {
+      font-family: "Inter", monospace, monospace;
+    }
+    /* Scrollbar for code blocks */
+    pre::-webkit-scrollbar {
+      height: 8px;
+    }
+    pre::-webkit-scrollbar-track {
+      background: #1f2937; /* Tailwind zinc-800 */
+    }
+    pre::-webkit-scrollbar-thumb {
+      background: #4b5563; /* Tailwind zinc-600 */
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-zinc-900 text-zinc-100 min-h-screen flex flex-col">
 
-    <div class="max-w-4xl mx-auto">
-      <div class="flex items-center gap-3 mb-8">
-        <i data-lucide="box" class="text-white" style="width: 32px; height: 32px;"></i>
-        <h1 class="text-3xl font-bold tracking-wide">Nocons Icon Library</h1>
-      </div>
+  <!-- Navbar -->
+  <header class="bg-zinc-800 border-b border-zinc-700 sticky top-0 z-50">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 text-2xl font-bold text-white hover:text-red-400 transition">
+        <i data-lucide="box" class="w-8 h-8"></i>
+        Nocons Icon Library
+      </a>
+      <a href="https://github.com/deadhoes/nocons" target="_blank" rel="noopener" class="text-zinc-400 hover:text-red-400 transition flex items-center gap-1">
+        <i data-lucide="github" class="w-6 h-6"></i> GitHub
+      </a>
+    </nav>
+  </header>
 
-      <!-- Icon Card -->
-      <div class="bg-zinc-800 border border-zinc-700 rounded-xl p-6 mb-6 shadow-lg">
-        <div class="flex items-center justify-between mb-2">
-          <div class="flex items-center gap-2">
-            <i data-lucide="heart" class="text-red-500" style="width: 20px; height: 20px;"></i>
-            <h2 class="text-xl font-semibold">Heart Icon</h2>
+  <main class="flex-grow max-w-6xl mx-auto px-6 py-10 w-full">
+
+    <h1 class="text-4xl font-extrabold mb-8 text-white">Documentation</h1>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4 flex items-center gap-3">
+        <i data-lucide="code" class="w-6 h-6 text-red-400"></i> Usage Example
+      </h2>
+      <p class="mb-3 text-zinc-300 leading-relaxed max-w-prose">
+        You can load the icon Lua scripts directly in Roblox using <code class="bg-zinc-800 px-1 rounded">loadstring</code> and <code class="bg-zinc-800 px-1 rounded">game:HttpGet</code>. Replace <code class="bg-zinc-800 px-1 rounded">iconname</code> with the icon you want:
+      </p>
+
+      <pre class="bg-zinc-950 rounded-lg p-6 text-green-400 overflow-x-auto text-sm font-mono select-all relative">
+<code>loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/iconname.lua"))()</code>
+<button onclick="copyCode(this)" class="absolute top-3 right-3 bg-zinc-700 hover:bg-zinc-600 text-xs px-2 py-1 rounded">Copy</button>
+      </pre>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4 flex items-center gap-3">
+        <i data-lucide="layers" class="w-6 h-6 text-red-400"></i> Available Icons
+      </h2>
+
+      <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl">
+        <!-- Icon item -->
+        <li class="bg-zinc-800 border border-zinc-700 rounded-lg p-4 flex items-center gap-4 hover:border-red-400 transition cursor-pointer select-text" onclick="copyIcon('heart')">
+          <i data-lucide="heart" class="w-7 h-7 text-red-500"></i>
+          <div>
+            <p class="font-semibold text-white">Heart</p>
+            <p class="text-zinc-400 text-xs">loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/heart.lua"))()</p>
           </div>
-        </div>
-        <div class="relative bg-zinc-950 text-green-400 text-sm p-4 rounded-md overflow-auto">
-          <code id="code-heart">loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/heart.lua"))()</code>
-          <button onclick="copyCode('code-heart')" class="absolute top-2 right-2 bg-zinc-700 text-xs px-2 py-1 rounded hover:bg-zinc-600 transition">Copy</button>
-        </div>
-      </div>
-
-      <!-- Another Icon Card -->
-      <div class="bg-zinc-800 border border-zinc-700 rounded-xl p-6 mb-6 shadow-lg">
-        <div class="flex items-center justify-between mb-2">
-          <div class="flex items-center gap-2">
-            <i data-lucide="flame" class="text-orange-500" style="width: 20px; height: 20px;"></i>
-            <h2 class="text-xl font-semibold">Fire Icon</h2>
+        </li>
+        <li class="bg-zinc-800 border border-zinc-700 rounded-lg p-4 flex items-center gap-4 hover:border-red-400 transition cursor-pointer select-text" onclick="copyIcon('fire')">
+          <i data-lucide="flame" class="w-7 h-7 text-orange-500"></i>
+          <div>
+            <p class="font-semibold text-white">Fire</p>
+            <p class="text-zinc-400 text-xs">loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/fire.lua"))()</p>
           </div>
-        </div>
-        <div class="relative bg-zinc-950 text-green-400 text-sm p-4 rounded-md overflow-auto">
-          <code id="code-fire">loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/fire.lua"))()</code>
-          <button onclick="copyCode('code-fire')" class="absolute top-2 right-2 bg-zinc-700 text-xs px-2 py-1 rounded hover:bg-zinc-600 transition">Copy</button>
-        </div>
-      </div>
-    </div>
+        </li>
+        <!-- Buraya yeni ikonlar eklenebilir -->
+      </ul>
+    </section>
 
-    <script>
-      window.onload = () => lucide.createIcons();
-      function copyCode(id) {
-        const code = document.getElementById(id).textContent;
-        navigator.clipboard.writeText(code).then(() => {
-          alert("✅ Code copied to clipboard!");
-        });
-      }
-    </script>
-  </body>
+    <section>
+      <h2 class="text-2xl font-semibold mb-4 flex items-center gap-3">
+        <i data-lucide="download" class="w-6 h-6 text-red-400"></i> Loader Script (Optional)
+      </h2>
+      <p class="mb-3 text-zinc-300 max-w-prose leading-relaxed">
+        Instead of calling individual icons directly, you can load this <code class="bg-zinc-800 px-1 rounded">loader.lua</code> script and use it to load any icon by name:
+      </p>
+      <pre class="bg-zinc-950 rounded-lg p-6 text-green-400 overflow-x-auto text-sm font-mono select-all relative">
+<code>local loadIcon = loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/loader.lua"))()
+loadIcon("heart")</code>
+<button onclick="copyCode(this)" class="absolute top-3 right-3 bg-zinc-700 hover:bg-zinc-600 text-xs px-2 py-1 rounded">Copy</button>
+      </pre>
+    </section>
+
+  </main>
+
+  <footer class="bg-zinc-800 border-t border-zinc-700 py-6 mt-auto text-center text-zinc-400 text-sm select-none">
+    © 2025 deadhoes | Built with TailwindCSS & Lucide Icons
+  </footer>
+
+  <script>
+    window.onload = () => lucide.createIcons();
+
+    function copyCode(button) {
+      const codeBlock = button.previousElementSibling;
+      navigator.clipboard.writeText(codeBlock.textContent.trim()).then(() => {
+        button.textContent = "Copied!";
+        setTimeout(() => (button.textContent = "Copy"), 1500);
+      });
+    }
+
+    function copyIcon(name) {
+      const code = `loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/${name}.lua"))()`;
+      navigator.clipboard.writeText(code).then(() => {
+        alert(`Copied icon load command for "${name}"!`);
+      });
+    }
+  </script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <title>Nocons Icon Library Docs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/lucide@latest/dist/esm/lucide.js"></script>
+  <style>
+    body {
+      font-family: "Inter", monospace, monospace;
+    }
+    /* Scrollbar for code blocks */
+    pre::-webkit-scrollbar {
+      height: 8px;
+    }
+    pre::-webkit-scrollbar-track {
+      background: #1f2937; /* Tailwind zinc-800 */
+    }
+    pre::-webkit-scrollbar-thumb {
+      background: #4b5563; /* Tailwind zinc-600 */
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-zinc-900 text-zinc-100 min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <header class="bg-zinc-800 border-b border-zinc-700 sticky top-0 z-50">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 text-2xl font-bold text-white hover:text-red-400 transition">
+        <i data-lucide="box" class="w-8 h-8"></i>
+        Nocons Icon Library
+      </a>
+      <a href="https://github.com/deadhoes/nocons" target="_blank" rel="noopener" class="text-zinc-400 hover:text-red-400 transition flex items-center gap-1">
+        <i data-lucide="github" class="w-6 h-6"></i> GitHub
+      </a>
+    </nav>
+  </header>
+
+  <main class="flex-grow max-w-6xl mx-auto px-6 py-10 w-full">
+
+    <h1 class="text-4xl font-extrabold mb-8 text-white">Documentation</h1>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4 flex items-center gap-3">
+        <i data-lucide="code" class="w-6 h-6 text-red-400"></i> Usage Example
+      </h2>
+      <p class="mb-3 text-zinc-300 leading-relaxed max-w-prose">
+        You can load the icon Lua scripts directly in Roblox using <code class="bg-zinc-800 px-1 rounded">loadstring</code> and <code class="bg-zinc-800 px-1 rounded">game:HttpGet</code>. Replace <code class="bg-zinc-800 px-1 rounded">iconname</code> with the icon you want:
+      </p>
+
+      <pre class="bg-zinc-950 rounded-lg p-6 text-green-400 overflow-x-auto text-sm font-mono select-all relative">
+<code>loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/iconname.lua"))()</code>
+<button onclick="copyCode(this)" class="absolute top-3 right-3 bg-zinc-700 hover:bg-zinc-600 text-xs px-2 py-1 rounded">Copy</button>
+      </pre>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4 flex items-center gap-3">
+        <i data-lucide="layers" class="w-6 h-6 text-red-400"></i> Available Icons
+      </h2>
+
+      <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl">
+        <!-- Icon item -->
+        <li class="bg-zinc-800 border border-zinc-700 rounded-lg p-4 flex items-center gap-4 hover:border-red-400 transition cursor-pointer select-text" onclick="copyIcon('heart')">
+          <i data-lucide="heart" class="w-7 h-7 text-red-500"></i>
+          <div>
+            <p class="font-semibold text-white">Heart</p>
+            <p class="text-zinc-400 text-xs">loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/heart.lua"))()</p>
+          </div>
+        </li>
+        <li class="bg-zinc-800 border border-zinc-700 rounded-lg p-4 flex items-center gap-4 hover:border-red-400 transition cursor-pointer select-text" onclick="copyIcon('fire')">
+          <i data-lucide="flame" class="w-7 h-7 text-orange-500"></i>
+          <div>
+            <p class="font-semibold text-white">Fire</p>
+            <p class="text-zinc-400 text-xs">loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/fire.lua"))()</p>
+          </div>
+        </li>
+        <!-- Buraya yeni ikonlar eklenebilir -->
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold mb-4 flex items-center gap-3">
+        <i data-lucide="download" class="w-6 h-6 text-red-400"></i> Loader Script (Optional)
+      </h2>
+      <p class="mb-3 text-zinc-300 max-w-prose leading-relaxed">
+        Instead of calling individual icons directly, you can load this <code class="bg-zinc-800 px-1 rounded">loader.lua</code> script and use it to load any icon by name:
+      </p>
+      <pre class="bg-zinc-950 rounded-lg p-6 text-green-400 overflow-x-auto text-sm font-mono select-all relative">
+<code>local loadIcon = loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/loader.lua"))()
+loadIcon("heart")</code>
+<button onclick="copyCode(this)" class="absolute top-3 right-3 bg-zinc-700 hover:bg-zinc-600 text-xs px-2 py-1 rounded">Copy</button>
+      </pre>
+    </section>
+
+  </main>
+
+  <footer class="bg-zinc-800 border-t border-zinc-700 py-6 mt-auto text-center text-zinc-400 text-sm select-none">
+    © 2025 deadhoes | Built with TailwindCSS & Lucide Icons
+  </footer>
+
+  <script>
+    window.onload = () => lucide.createIcons();
+
+    function copyCode(button) {
+      const codeBlock = button.previousElementSibling;
+      navigator.clipboard.writeText(codeBlock.textContent.trim()).then(() => {
+        button.textContent = "Copied!";
+        setTimeout(() => (button.textContent = "Copy"), 1500);
+      });
+    }
+
+    function copyIcon(name) {
+      const code = `loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/${name}.lua"))()`;
+      navigator.clipboard.writeText(code).then(() => {
+        alert(`Copied icon load command for "${name}"!`);
+      });
+    }
+  </script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <title>Nocons Icon Library Docs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/lucide@latest/dist/esm/lucide.js"></script>
+  <style>
+    body {
+      font-family: "Inter", monospace, monospace;
+    }
+    /* Scrollbar for code blocks */
+    pre::-webkit-scrollbar {
+      height: 8px;
+    }
+    pre::-webkit-scrollbar-track {
+      background: #1f2937; /* Tailwind zinc-800 */
+    }
+    pre::-webkit-scrollbar-thumb {
+      background: #4b5563; /* Tailwind zinc-600 */
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-zinc-900 text-zinc-100 min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <header class="bg-zinc-800 border-b border-zinc-700 sticky top-0 z-50">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 text-2xl font-bold text-white hover:text-red-400 transition">
+        <i data-lucide="box" class="w-8 h-8"></i>
+        Nocons Icon Library
+      </a>
+      <a href="https://github.com/deadhoes/nocons" target="_blank" rel="noopener" class="text-zinc-400 hover:text-red-400 transition flex items-center gap-1">
+        <i data-lucide="github" class="w-6 h-6"></i> GitHub
+      </a>
+    </nav>
+  </header>
+
+  <main class="flex-grow max-w-6xl mx-auto px-6 py-10 w-full">
+
+    <h1 class="text-4xl font-extrabold mb-8 text-white">Documentation</h1>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4 flex items-center gap-3">
+        <i data-lucide="code" class="w-6 h-6 text-red-400"></i> Usage Example
+      </h2>
+      <p class="mb-3 text-zinc-300 leading-relaxed max-w-prose">
+        You can load the icon Lua scripts directly in Roblox using <code class="bg-zinc-800 px-1 rounded">loadstring</code> and <code class="bg-zinc-800 px-1 rounded">game:HttpGet</code>. Replace <code class="bg-zinc-800 px-1 rounded">iconname</code> with the icon you want:
+      </p>
+
+      <pre class="bg-zinc-950 rounded-lg p-6 text-green-400 overflow-x-auto text-sm font-mono select-all relative">
+<code>loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/iconname.lua"))()</code>
+<button onclick="copyCode(this)" class="absolute top-3 right-3 bg-zinc-700 hover:bg-zinc-600 text-xs px-2 py-1 rounded">Copy</button>
+      </pre>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4 flex items-center gap-3">
+        <i data-lucide="layers" class="w-6 h-6 text-red-400"></i> Available Icons
+      </h2>
+
+      <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl">
+        <!-- Icon item -->
+        <li class="bg-zinc-800 border border-zinc-700 rounded-lg p-4 flex items-center gap-4 hover:border-red-400 transition cursor-pointer select-text" onclick="copyIcon('heart')">
+          <i data-lucide="heart" class="w-7 h-7 text-red-500"></i>
+          <div>
+            <p class="font-semibold text-white">Heart</p>
+            <p class="text-zinc-400 text-xs">loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/heart.lua"))()</p>
+          </div>
+        </li>
+        <li class="bg-zinc-800 border border-zinc-700 rounded-lg p-4 flex items-center gap-4 hover:border-red-400 transition cursor-pointer select-text" onclick="copyIcon('fire')">
+          <i data-lucide="flame" class="w-7 h-7 text-orange-500"></i>
+          <div>
+            <p class="font-semibold text-white">Fire</p>
+            <p class="text-zinc-400 text-xs">loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/fire.lua"))()</p>
+          </div>
+        </li>
+        <!-- Buraya yeni ikonlar eklenebilir -->
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold mb-4 flex items-center gap-3">
+        <i data-lucide="download" class="w-6 h-6 text-red-400"></i> Loader Script (Optional)
+      </h2>
+      <p class="mb-3 text-zinc-300 max-w-prose leading-relaxed">
+        Instead of calling individual icons directly, you can load this <code class="bg-zinc-800 px-1 rounded">loader.lua</code> script and use it to load any icon by name:
+      </p>
+      <pre class="bg-zinc-950 rounded-lg p-6 text-green-400 overflow-x-auto text-sm font-mono select-all relative">
+<code>local loadIcon = loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/loader.lua"))()
+loadIcon("heart")</code>
+<button onclick="copyCode(this)" class="absolute top-3 right-3 bg-zinc-700 hover:bg-zinc-600 text-xs px-2 py-1 rounded">Copy</button>
+      </pre>
+    </section>
+
+  </main>
+
+  <footer class="bg-zinc-800 border-t border-zinc-700 py-6 mt-auto text-center text-zinc-400 text-sm select-none">
+    © 2025 deadhoes | Built with TailwindCSS & Lucide Icons
+  </footer>
+
+  <script>
+    window.onload = () => lucide.createIcons();
+
+    function copyCode(button) {
+      const codeBlock = button.previousElementSibling;
+      navigator.clipboard.writeText(codeBlock.textContent.trim()).then(() => {
+        button.textContent = "Copied!";
+        setTimeout(() => (button.textContent = "Copy"), 1500);
+      });
+    }
+
+    function copyIcon(name) {
+      const code = `loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/${name}.lua"))()`;
+      navigator.clipboard.writeText(code).then(() => {
+        alert(`Copied icon load command for "${name}"!`);
+      });
+    }
+  </script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <title>Nocons Icon Library Docs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/lucide@latest/dist/esm/lucide.js"></script>
+  <style>
+    body {
+      font-family: "Inter", monospace, monospace;
+    }
+    /* Scrollbar for code blocks */
+    pre::-webkit-scrollbar {
+      height: 8px;
+    }
+    pre::-webkit-scrollbar-track {
+      background: #1f2937; /* Tailwind zinc-800 */
+    }
+    pre::-webkit-scrollbar-thumb {
+      background: #4b5563; /* Tailwind zinc-600 */
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-zinc-900 text-zinc-100 min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <header class="bg-zinc-800 border-b border-zinc-700 sticky top-0 z-50">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 text-2xl font-bold text-white hover:text-red-400 transition">
+        <i data-lucide="box" class="w-8 h-8"></i>
+        Nocons Icon Library
+      </a>
+      <a href="https://github.com/deadhoes/nocons" target="_blank" rel="noopener" class="text-zinc-400 hover:text-red-400 transition flex items-center gap-1">
+        <i data-lucide="github" class="w-6 h-6"></i> GitHub
+      </a>
+    </nav>
+  </header>
+
+  <main class="flex-grow max-w-6xl mx-auto px-6 py-10 w-full">
+
+    <h1 class="text-4xl font-extrabold mb-8 text-white">Documentation</h1>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4 flex items-center gap-3">
+        <i data-lucide="code" class="w-6 h-6 text-red-400"></i> Usage Example
+      </h2>
+      <p class="mb-3 text-zinc-300 leading-relaxed max-w-prose">
+        You can load the icon Lua scripts directly in Roblox using <code class="bg-zinc-800 px-1 rounded">loadstring</code> and <code class="bg-zinc-800 px-1 rounded">game:HttpGet</code>. Replace <code class="bg-zinc-800 px-1 rounded">iconname</code> with the icon you want:
+      </p>
+
+      <pre class="bg-zinc-950 rounded-lg p-6 text-green-400 overflow-x-auto text-sm font-mono select-all relative">
+<code>loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/iconname.lua"))()</code>
+<button onclick="copyCode(this)" class="absolute top-3 right-3 bg-zinc-700 hover:bg-zinc-600 text-xs px-2 py-1 rounded">Copy</button>
+      </pre>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4 flex items-center gap-3">
+        <i data-lucide="layers" class="w-6 h-6 text-red-400"></i> Available Icons
+      </h2>
+
+      <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl">
+        <!-- Icon item -->
+        <li class="bg-zinc-800 border border-zinc-700 rounded-lg p-4 flex items-center gap-4 hover:border-red-400 transition cursor-pointer select-text" onclick="copyIcon('heart')">
+          <i data-lucide="heart" class="w-7 h-7 text-red-500"></i>
+          <div>
+            <p class="font-semibold text-white">Heart</p>
+            <p class="text-zinc-400 text-xs">loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/heart.lua"))()</p>
+          </div>
+        </li>
+        <li class="bg-zinc-800 border border-zinc-700 rounded-lg p-4 flex items-center gap-4 hover:border-red-400 transition cursor-pointer select-text" onclick="copyIcon('fire')">
+          <i data-lucide="flame" class="w-7 h-7 text-orange-500"></i>
+          <div>
+            <p class="font-semibold text-white">Fire</p>
+            <p class="text-zinc-400 text-xs">loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/fire.lua"))()</p>
+          </div>
+        </li>
+        <!-- Buraya yeni ikonlar eklenebilir -->
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold mb-4 flex items-center gap-3">
+        <i data-lucide="download" class="w-6 h-6 text-red-400"></i> Loader Script (Optional)
+      </h2>
+      <p class="mb-3 text-zinc-300 max-w-prose leading-relaxed">
+        Instead of calling individual icons directly, you can load this <code class="bg-zinc-800 px-1 rounded">loader.lua</code> script and use it to load any icon by name:
+      </p>
+      <pre class="bg-zinc-950 rounded-lg p-6 text-green-400 overflow-x-auto text-sm font-mono select-all relative">
+<code>local loadIcon = loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/loader.lua"))()
+loadIcon("heart")</code>
+<button onclick="copyCode(this)" class="absolute top-3 right-3 bg-zinc-700 hover:bg-zinc-600 text-xs px-2 py-1 rounded">Copy</button>
+      </pre>
+    </section>
+
+  </main>
+
+  <footer class="bg-zinc-800 border-t border-zinc-700 py-6 mt-auto text-center text-zinc-400 text-sm select-none">
+    © 2025 deadhoes | Built with TailwindCSS & Lucide Icons
+  </footer>
+
+  <script>
+    window.onload = () => lucide.createIcons();
+
+    function copyCode(button) {
+      const codeBlock = button.previousElementSibling;
+      navigator.clipboard.writeText(codeBlock.textContent.trim()).then(() => {
+        button.textContent = "Copied!";
+        setTimeout(() => (button.textContent = "Copy"), 1500);
+      });
+    }
+
+    function copyIcon(name) {
+      const code = `loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/${name}.lua"))()`;
+      navigator.clipboard.writeText(code).then(() => {
+        alert(`Copied icon load command for "${name}"!`);
+      });
+    }
+  </script>
+
+</body>
 </html>
