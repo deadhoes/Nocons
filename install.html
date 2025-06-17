@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Install Nocons - Minimal SVG Icons</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-bold text-indigo-600">Nocons</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-500 hover:text-indigo-600">Home</a>
+                    <a href="install.html" class="text-gray-900 font-medium">Install</a>
+                    <a href="icons.html" class="text-gray-500 hover:text-indigo-600">Icons</a>
+                    <a href="https://github.com/deadhoes/Nocons" class="text-gray-500 hover:text-indigo-600">GitHub</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <!-- Mobile menu button -->
+                    <button class="mobile-menu-button">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="mobile-menu hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500">Home</a>
+                <a href="install.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900">Install</a>
+                <a href="icons.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500">Icons</a>
+                <a href="https://github.com/deadhoes/Nocons" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="lg:text-center">
+            <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Installation</h2>
+            <h1 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                Get started with Nocons
+            </h1>
+            <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                Choose your preferred method to add Nocons to your project.
+            </p>
+        </div>
+
+        <div class="mt-20">
+            <div class="space-y-20">
+                <!-- NPM Installation -->
+                <div class="relative">
+                    <div class="absolute -top-5 -left-5 bg-indigo-500 text-white text-lg font-bold px-4 py-1 rounded-md">
+                        NPM
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                        <div class="mt-6">
+                            <div class="bg-gray-800 text-gray-100 p-4 rounded-md font-mono text-sm overflow-x-auto">
+                                npm install nocons
+                            </div>
+                            <div class="mt-4 prose prose-indigo text-gray-500">
+                                <p>After installation, you can import individual icons:</p>
+                                <div class="bg-gray-800 text-gray-100 p-4 rounded-md font-mono text-sm mt-2 overflow-x-auto">
+                                    import { Home, Alert } from 'nocons';
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CDN Installation -->
+                <div class="relative">
+                    <div class="absolute -top-5 -left-5 bg-indigo-500 text-white text-lg font-bold px-4 py-1 rounded-md">
+                        CDN
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                        <div class="mt-6">
+                            <div class="bg-gray-800 text-gray-100 p-4 rounded-md font-mono text-sm overflow-x-auto">
+                                &lt;script src="https://unpkg.com/nocons"&gt;&lt;/script&gt;
+                            </div>
+                            <div class="mt-4 prose prose-indigo text-gray-500">
+                                <p>After adding the script tag, icons will be available under the <code>Nocons</code> global variable.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Download SVG -->
+                <div class="relative">
+                    <div class="absolute -top-5 -left-5 bg-indigo-500 text-white text-lg font-bold px-4 py-1 rounded-md">
+                        SVG Download
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                        <div class="mt-6">
+                            <p class="text-gray-600 mb-4">
+                                Download the complete set of SVG icons to use directly in your project.
+                            </p>
+                            <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">
+                                Download SVG Pack
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Usage Examples -->
+        <div class="mt-20">
+            <div class="lg:text-center">
+                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Usage</h2>
+                <h3 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    How to use Nocons
+                </h3>
+            </div>
+
+            <div class="mt-10">
+                <div class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+                    <!-- React Usage -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">React Usage</h3>
+                        <div class="bg-gray-800 text-gray-100 p-4 rounded-md font-mono text-sm overflow-x-auto">
+                            import { Home } from 'nocons';<br><br>
+                            function App() {<br>
+                            &nbsp;&nbsp;return (<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Home className="text-blue-500" size={24} /&gt;<
