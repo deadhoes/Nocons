@@ -2,42 +2,57 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nocons Icon Library</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/lucide@latest/dist/esm/lucide.js"></script>
+    <style>
+      body { font-family: monospace; }
+    </style>
   </head>
-  <body class="bg-zinc-900 text-white font-mono min-h-screen p-6">
-    <div class="max-w-4xl mx-auto">
-      <h1 class="text-4xl font-bold mb-8 text-white">🧱 Nocons Icon Library</h1>
+  <body class="bg-zinc-900 text-white min-h-screen px-6 py-10">
 
-      <!-- ICON CARD -->
-      <div class="bg-zinc-800 rounded-xl p-5 mb-6 shadow-md border border-zinc-700">
-        <h2 class="text-xl font-semibold mb-2">❤️ Heart Icon</h2>
-        <div class="relative bg-zinc-950 p-4 rounded-lg overflow-auto text-green-400 text-sm">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-center gap-3 mb-8">
+        <i data-lucide="box" class="text-white" style="width: 32px; height: 32px;"></i>
+        <h1 class="text-3xl font-bold tracking-wide">Nocons Icon Library</h1>
+      </div>
+
+      <!-- Icon Card -->
+      <div class="bg-zinc-800 border border-zinc-700 rounded-xl p-6 mb-6 shadow-lg">
+        <div class="flex items-center justify-between mb-2">
+          <div class="flex items-center gap-2">
+            <i data-lucide="heart" class="text-red-500" style="width: 20px; height: 20px;"></i>
+            <h2 class="text-xl font-semibold">Heart Icon</h2>
+          </div>
+        </div>
+        <div class="relative bg-zinc-950 text-green-400 text-sm p-4 rounded-md overflow-auto">
           <code id="code-heart">loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/heart.lua"))()</code>
-          <button onclick="copyCode('code-heart')" class="absolute top-2 right-2 bg-zinc-700 text-xs px-2 py-1 rounded hover:bg-zinc-600 transition">
-            Copy
-          </button>
+          <button onclick="copyCode('code-heart')" class="absolute top-2 right-2 bg-zinc-700 text-xs px-2 py-1 rounded hover:bg-zinc-600 transition">Copy</button>
         </div>
       </div>
 
-      <!-- ICON CARD -->
-      <div class="bg-zinc-800 rounded-xl p-5 mb-6 shadow-md border border-zinc-700">
-        <h2 class="text-xl font-semibold mb-2">🔥 Fire Icon</h2>
-        <div class="relative bg-zinc-950 p-4 rounded-lg overflow-auto text-green-400 text-sm">
+      <!-- Another Icon Card -->
+      <div class="bg-zinc-800 border border-zinc-700 rounded-xl p-6 mb-6 shadow-lg">
+        <div class="flex items-center justify-between mb-2">
+          <div class="flex items-center gap-2">
+            <i data-lucide="flame" class="text-orange-500" style="width: 20px; height: 20px;"></i>
+            <h2 class="text-xl font-semibold">Fire Icon</h2>
+          </div>
+        </div>
+        <div class="relative bg-zinc-950 text-green-400 text-sm p-4 rounded-md overflow-auto">
           <code id="code-fire">loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/fire.lua"))()</code>
-          <button onclick="copyCode('code-fire')" class="absolute top-2 right-2 bg-zinc-700 text-xs px-2 py-1 rounded hover:bg-zinc-600 transition">
-            Copy
-          </button>
+          <button onclick="copyCode('code-fire')" class="absolute top-2 right-2 bg-zinc-700 text-xs px-2 py-1 rounded hover:bg-zinc-600 transition">Copy</button>
         </div>
       </div>
     </div>
 
     <script>
+      window.onload = () => lucide.createIcons();
       function copyCode(id) {
-        const text = document.getElementById(id).textContent;
-        navigator.clipboard.writeText(text).then(() => {
-          alert("✅ Copied!");
+        const code = document.getElementById(id).textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          alert("✅ Code copied to clipboard!");
         });
       }
     </script>
