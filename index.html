@@ -1,496 +1,317 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <title>Nocons Icon Library Docs</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script type="module" src="https://unpkg.com/lucide@latest/dist/esm/lucide.js"></script>
-  <style>
-    body {
-      font-family: "Inter", monospace, monospace;
-    }
-    /* Scrollbar for code blocks */
-    pre::-webkit-scrollbar {
-      height: 8px;
-    }
-    pre::-webkit-scrollbar-track {
-      background: #1f2937; /* Tailwind zinc-800 */
-    }
-    pre::-webkit-scrollbar-thumb {
-      background: #4b5563; /* Tailwind zinc-600 */
-      border-radius: 4px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyIcon Framework</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+        .icon-card:hover {
+            transform: translateY(-4px);
+        }
+    </style>
 </head>
-<body class="bg-zinc-900 text-zinc-100 min-h-screen flex flex-col">
-
-  <!-- Navbar -->
-  <header class="bg-zinc-800 border-b border-zinc-700 sticky top-0 z-50">
-    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2 text-2xl font-bold text-white hover:text-red-400 transition">
-        <i data-lucide="box" class="w-8 h-8"></i>
-        Nocons Icon Library
-      </a>
-      <a href="https://github.com/deadhoes/nocons" target="_blank" rel="noopener" class="text-zinc-400 hover:text-red-400 transition flex items-center gap-1">
-        <i data-lucide="github" class="w-6 h-6"></i> GitHub
-      </a>
+<body class="font-sans bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-indigo-600">MyIcon</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#installation" class="text-gray-700 hover:text-indigo-600">Installation</a>
+                    <a href="#icons" class="text-gray-700 hover:text-indigo-600">Icons</a>
+                    <a href="#usage" class="text-gray-700 hover:text-indigo-600">Usage</a>
+                    <a href="https://github.com/yourusername/myicon" class="text-gray-700 hover:text-indigo-600">GitHub</a>
+                </div>
+            </div>
+        </div>
     </nav>
-  </header>
 
-  <main class="flex-grow max-w-6xl mx-auto px-6 py-10 w-full">
+    <!-- Hero Section -->
+    <div class="bg-white">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+                <span class="block">Beautiful Icons for</span>
+                <span class="block text-indigo-600">Modern Web Projects</span>
+            </h1>
+            <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+                Carefully crafted SVG icons that you can use in your React, Vue, Angular or plain HTML projects.
+            </p>
+            <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+                <div class="rounded-md shadow">
+                    <a href="#installation" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+                        Get Started
+                    </a>
+                </div>
+                <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
+                    <a href="#icons" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
+                        Browse Icons
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <h1 class="text-4xl font-extrabold mb-8 text-white">Documentation</h1>
+    <!-- Installation Section -->
+    <div id="installation" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="lg:text-center">
+            <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Installation</h2>
+            <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                Add MyIcon to your project
+            </p>
+        </div>
 
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold mb-4 flex items-center gap-3">
-        <i data-lucide="code" class="w-6 h-6 text-red-400"></i> Usage Example
-      </h2>
-      <p class="mb-3 text-zinc-300 leading-relaxed max-w-prose">
-        You can load the icon Lua scripts directly in Roblox using <code class="bg-zinc-800 px-1 rounded">loadstring</code> and <code class="bg-zinc-800 px-1 rounded">game:HttpGet</code>. Replace <code class="bg-zinc-800 px-1 rounded">iconname</code> with the icon you want:
-      </p>
+        <div class="mt-10">
+            <div class="space-y-10 md:space-y-0 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-10">
+                <!-- NPM -->
+                <div class="relative bg-white p-6 rounded-lg shadow-md border border-gray-100">
+                    <div class="absolute -top-5 left-5 bg-indigo-500 text-white text-lg font-bold px-4 py-1 rounded-md">
+                        npm
+                    </div>
+                    <div class="mt-6">
+                        <div class="bg-gray-800 text-gray-100 p-4 rounded-md font-mono text-sm">
+                            npm install myicon
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CDN -->
+                <div class="relative bg-white p-6 rounded-lg shadow-md border border-gray-100">
+                    <div class="absolute -top-5 left-5 bg-indigo-500 text-white text-lg font-bold px-4 py-1 rounded-md">
+                        CDN
+                    </div>
+                    <div class="mt-6">
+                        <div class="bg-gray-800 text-gray-100 p-4 rounded-md font-mono text-sm">
+                            &lt;script src="https://unpkg.com/myicon"&gt;&lt;/script&gt;
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Download -->
+                <div class="relative bg-white p-6 rounded-lg shadow-md border border-gray-100">
+                    <div class="absolute -top-5 left-5 bg-indigo-500 text-white text-lg font-bold px-4 py-1 rounded-md">
+                        Download
+                    </div>
+                    <div class="mt-6">
+                        <a href="#" class="w-full flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                            Download SVG Pack
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-      <pre class="bg-zinc-950 rounded-lg p-6 text-green-400 overflow-x-auto text-sm font-mono select-all relative">
-<code>loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/iconname.lua"))()</code>
-<button onclick="copyCode(this)" class="absolute top-3 right-3 bg-zinc-700 hover:bg-zinc-600 text-xs px-2 py-1 rounded">Copy</button>
-      </pre>
-    </section>
+    <!-- Icons Section -->
+    <div id="icons" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-gray-50 rounded-lg">
+        <div class="lg:text-center mb-10">
+            <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Icons</h2>
+            <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                Browse our icon collection
+            </p>
+        </div>
 
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold mb-4 flex items-center gap-3">
-        <i data-lucide="layers" class="w-6 h-6 text-red-400"></i> Available Icons
-      </h2>
+        <!-- Search -->
+        <div class="mb-8 max-w-md mx-auto">
+            <div class="relative flex items-center">
+                <input type="text" placeholder="Search icons..." class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                <svg class="absolute left-3 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </div>
+        </div>
 
-      <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl">
-        <!-- Icon item -->
-        <li class="bg-zinc-800 border border-zinc-700 rounded-lg p-4 flex items-center gap-4 hover:border-red-400 transition cursor-pointer select-text" onclick="copyIcon('heart')">
-          <i data-lucide="heart" class="w-7 h-7 text-red-500"></i>
-          <div>
-            <p class="font-semibold text-white">Heart</p>
-            <p class="text-zinc-400 text-xs">loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/heart.lua"))()</p>
-          </div>
-        </li>
-        <li class="bg-zinc-800 border border-zinc-700 rounded-lg p-4 flex items-center gap-4 hover:border-red-400 transition cursor-pointer select-text" onclick="copyIcon('fire')">
-          <i data-lucide="flame" class="w-7 h-7 text-orange-500"></i>
-          <div>
-            <p class="font-semibold text-white">Fire</p>
-            <p class="text-zinc-400 text-xs">loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/fire.lua"))()</p>
-          </div>
-        </li>
-        <!-- Buraya yeni ikonlar eklenebilir -->
-      </ul>
-    </section>
+        <!-- Categories -->
+        <div class="flex flex-wrap justify-center gap-2 mb-8">
+            <button class="px-4 py-2 bg-indigo-600 text-white rounded-full">All</button>
+            <button class="px-4 py-2 bg-white border border-gray-300 rounded-full hover:bg-gray-100">Arrows</button>
+            <button class="px-4 py-2 bg-white border border-gray-300 rounded-full hover:bg-gray-100">Communication</button>
+            <button class="px-4 py-2 bg-white border border-gray-300 rounded-full hover:bg-gray-100">Design</button>
+            <button class="px-4 py-2 bg-white border border-gray-300 rounded-full hover:bg-gray-100">Development</button>
+            <button class="px-4 py-2 bg-white border border-gray-300 rounded-full hover:bg-gray-100">Devices</button>
+        </div>
 
-    <section>
-      <h2 class="text-2xl font-semibold mb-4 flex items-center gap-3">
-        <i data-lucide="download" class="w-6 h-6 text-red-400"></i> Loader Script (Optional)
-      </h2>
-      <p class="mb-3 text-zinc-300 max-w-prose leading-relaxed">
-        Instead of calling individual icons directly, you can load this <code class="bg-zinc-800 px-1 rounded">loader.lua</code> script and use it to load any icon by name:
-      </p>
-      <pre class="bg-zinc-950 rounded-lg p-6 text-green-400 overflow-x-auto text-sm font-mono select-all relative">
-<code>local loadIcon = loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/loader.lua"))()
-loadIcon("heart")</code>
-<button onclick="copyCode(this)" class="absolute top-3 right-3 bg-zinc-700 hover:bg-zinc-600 text-xs px-2 py-1 rounded">Copy</button>
-      </pre>
-    </section>
+        <!-- Icon Grid -->
+        <div class="icon-grid">
+            <!-- Icon Card - Repeat for each icon -->
+            <div class="icon-card bg-white p-4 rounded-lg shadow-sm border border-gray-100 text-center transition-all duration-200 cursor-pointer">
+                <div class="w-full h-16 flex items-center justify-center text-gray-700 mb-2">
+                    <!-- Your SVG icon here -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                </div>
+                <div class="text-xs font-medium text-gray-700">alert-circle</div>
+                <div class="text-xs text-gray-500 mt-1">1.2kb</div>
+            </div>
+            
+            <!-- More icons... -->
+        </div>
 
-  </main>
+        <!-- Pagination -->
+        <div class="mt-10 flex justify-center">
+            <nav class="inline-flex rounded-md shadow">
+                <a href="#" class="px-3 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">Previous</a>
+                <a href="#" class="px-3 py-2 border-t border-b border-gray-300 bg-white text-sm font-medium text-indigo-600 hover:bg-gray-50">1</a>
+                <a href="#" class="px-3 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">2</a>
+                <a href="#" class="px-3 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">3</a>
+                <a href="#" class="px-3 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">Next</a>
+            </nav>
+        </div>
+    </div>
 
-  <footer class="bg-zinc-800 border-t border-zinc-700 py-6 mt-auto text-center text-zinc-400 text-sm select-none">
-    © 2025 deadhoes | Built with TailwindCSS & Lucide Icons
-  </footer>
+    <!-- Usage Section -->
+    <div id="usage" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="lg:text-center">
+            <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Usage</h2>
+            <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                How to use MyIcon
+            </p>
+        </div>
 
-  <script>
-    window.onload = () => lucide.createIcons();
+        <div class="mt-10">
+            <div class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+                <!-- HTML Usage -->
+                <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+                    <h3 class="text-lg font-medium text-gray-900 mb-4">HTML Usage</h3>
+                    <div class="bg-gray-800 text-gray-100 p-4 rounded-md font-mono text-sm">
+                        &lt;!-- Copy SVG directly --&gt;<br>
+                        &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;<br>
+                        &nbsp;&nbsp;&lt;circle cx="12" cy="12" r="10"&gt;&lt;/circle&gt;<br>
+                        &nbsp;&nbsp;&lt;line x1="12" y1="8" x2="12" y2="12"&gt;&lt;/line&gt;<br>
+                        &nbsp;&nbsp;&lt;line x1="12" y1="16" x2="12.01" y2="16"&gt;&lt;/line&gt;<br>
+                        &lt;/svg&gt;
+                    </div>
+                </div>
+                
+                <!-- React Usage -->
+                <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+                    <h3 class="text-lg font-medium text-gray-900 mb-4">React Usage</h3>
+                    <div class="bg-gray-800 text-gray-100 p-4 rounded-md font-mono text-sm">
+                        import { AlertCircle } from 'myicon';<br><br>
+                        function MyComponent() {<br>
+                        &nbsp;&nbsp;return (<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;AlertCircle className="text-red-500" size={24} /&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                        &nbsp;&nbsp;);<br>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    function copyCode(button) {
-      const codeBlock = button.previousElementSibling;
-      navigator.clipboard.writeText(codeBlock.textContent.trim()).then(() => {
-        button.textContent = "Copied!";
-        setTimeout(() => (button.textContent = "Copy"), 1500);
-      });
-    }
+    <!-- Footer -->
+    <footer class="bg-gray-800">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+                <div class="space-y-8 xl:col-span-1">
+                    <span class="text-white text-xl font-bold">MyIcon</span>
+                    <p class="text-gray-300 text-base">
+                        Beautiful SVG icons for modern web projects.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <span class="sr-only">GitHub</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <span class="sr-only">Twitter</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+                    <div class="md:grid md:grid-cols-2 md:gap-8">
+                        <div>
+                            <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Resources</h3>
+                            <ul class="mt-4 space-y-4">
+                                <li>
+                                    <a href="#" class="text-base text-gray-400 hover:text-white">Documentation</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-400 hover:text-white">Releases</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-400 hover:text-white">Contributing</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-12 md:mt-0">
+                            <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Legal</h3>
+                            <ul class="mt-4 space-y-4">
+                                <li>
+                                    <a href="#" class="text-base text-gray-400 hover:text-white">License</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-400 hover:text-white">Privacy</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-400 hover:text-white">Terms</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="md:grid md:grid-cols-2 md:gap-8">
+                        <div>
+                            <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Community</h3>
+                            <ul class="mt-4 space-y-4">
+                                <li>
+                                    <a href="#" class="text-base text-gray-400 hover:text-white">GitHub</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-400 hover:text-white">Discord</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-400 hover:text-white">Twitter</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8">
+                <p class="text-base text-gray-400 text-center">
+                    &copy; 2023 MyIcon. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
 
-    function copyIcon(name) {
-      const code = `loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/${name}.lua"))()`;
-      navigator.clipboard.writeText(code).then(() => {
-        alert(`Copied icon load command for "${name}"!`);
-      });
-    }
-  </script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8" />
-  <title>Nocons Icon Library Docs</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script type="module" src="https://unpkg.com/lucide@latest/dist/esm/lucide.js"></script>
-  <style>
-    body {
-      font-family: "Inter", monospace, monospace;
-    }
-    /* Scrollbar for code blocks */
-    pre::-webkit-scrollbar {
-      height: 8px;
-    }
-    pre::-webkit-scrollbar-track {
-      background: #1f2937; /* Tailwind zinc-800 */
-    }
-    pre::-webkit-scrollbar-thumb {
-      background: #4b5563; /* Tailwind zinc-600 */
-      border-radius: 4px;
-    }
-  </style>
-</head>
-<body class="bg-zinc-900 text-zinc-100 min-h-screen flex flex-col">
-
-  <!-- Navbar -->
-  <header class="bg-zinc-800 border-b border-zinc-700 sticky top-0 z-50">
-    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2 text-2xl font-bold text-white hover:text-red-400 transition">
-        <i data-lucide="box" class="w-8 h-8"></i>
-        Nocons Icon Library
-      </a>
-      <a href="https://github.com/deadhoes/nocons" target="_blank" rel="noopener" class="text-zinc-400 hover:text-red-400 transition flex items-center gap-1">
-        <i data-lucide="github" class="w-6 h-6"></i> GitHub
-      </a>
-    </nav>
-  </header>
-
-  <main class="flex-grow max-w-6xl mx-auto px-6 py-10 w-full">
-
-    <h1 class="text-4xl font-extrabold mb-8 text-white">Documentation</h1>
-
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold mb-4 flex items-center gap-3">
-        <i data-lucide="code" class="w-6 h-6 text-red-400"></i> Usage Example
-      </h2>
-      <p class="mb-3 text-zinc-300 leading-relaxed max-w-prose">
-        You can load the icon Lua scripts directly in Roblox using <code class="bg-zinc-800 px-1 rounded">loadstring</code> and <code class="bg-zinc-800 px-1 rounded">game:HttpGet</code>. Replace <code class="bg-zinc-800 px-1 rounded">iconname</code> with the icon you want:
-      </p>
-
-      <pre class="bg-zinc-950 rounded-lg p-6 text-green-400 overflow-x-auto text-sm font-mono select-all relative">
-<code>loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/iconname.lua"))()</code>
-<button onclick="copyCode(this)" class="absolute top-3 right-3 bg-zinc-700 hover:bg-zinc-600 text-xs px-2 py-1 rounded">Copy</button>
-      </pre>
-    </section>
-
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold mb-4 flex items-center gap-3">
-        <i data-lucide="layers" class="w-6 h-6 text-red-400"></i> Available Icons
-      </h2>
-
-      <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl">
-        <!-- Icon item -->
-        <li class="bg-zinc-800 border border-zinc-700 rounded-lg p-4 flex items-center gap-4 hover:border-red-400 transition cursor-pointer select-text" onclick="copyIcon('heart')">
-          <i data-lucide="heart" class="w-7 h-7 text-red-500"></i>
-          <div>
-            <p class="font-semibold text-white">Heart</p>
-            <p class="text-zinc-400 text-xs">loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/heart.lua"))()</p>
-          </div>
-        </li>
-        <li class="bg-zinc-800 border border-zinc-700 rounded-lg p-4 flex items-center gap-4 hover:border-red-400 transition cursor-pointer select-text" onclick="copyIcon('fire')">
-          <i data-lucide="flame" class="w-7 h-7 text-orange-500"></i>
-          <div>
-            <p class="font-semibold text-white">Fire</p>
-            <p class="text-zinc-400 text-xs">loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/fire.lua"))()</p>
-          </div>
-        </li>
-        <!-- Buraya yeni ikonlar eklenebilir -->
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="text-2xl font-semibold mb-4 flex items-center gap-3">
-        <i data-lucide="download" class="w-6 h-6 text-red-400"></i> Loader Script (Optional)
-      </h2>
-      <p class="mb-3 text-zinc-300 max-w-prose leading-relaxed">
-        Instead of calling individual icons directly, you can load this <code class="bg-zinc-800 px-1 rounded">loader.lua</code> script and use it to load any icon by name:
-      </p>
-      <pre class="bg-zinc-950 rounded-lg p-6 text-green-400 overflow-x-auto text-sm font-mono select-all relative">
-<code>local loadIcon = loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/loader.lua"))()
-loadIcon("heart")</code>
-<button onclick="copyCode(this)" class="absolute top-3 right-3 bg-zinc-700 hover:bg-zinc-600 text-xs px-2 py-1 rounded">Copy</button>
-      </pre>
-    </section>
-
-  </main>
-
-  <footer class="bg-zinc-800 border-t border-zinc-700 py-6 mt-auto text-center text-zinc-400 text-sm select-none">
-    © 2025 deadhoes | Built with TailwindCSS & Lucide Icons
-  </footer>
-
-  <script>
-    window.onload = () => lucide.createIcons();
-
-    function copyCode(button) {
-      const codeBlock = button.previousElementSibling;
-      navigator.clipboard.writeText(codeBlock.textContent.trim()).then(() => {
-        button.textContent = "Copied!";
-        setTimeout(() => (button.textContent = "Copy"), 1500);
-      });
-    }
-
-    function copyIcon(name) {
-      const code = `loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/${name}.lua"))()`;
-      navigator.clipboard.writeText(code).then(() => {
-        alert(`Copied icon load command for "${name}"!`);
-      });
-    }
-  </script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8" />
-  <title>Nocons Icon Library Docs</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script type="module" src="https://unpkg.com/lucide@latest/dist/esm/lucide.js"></script>
-  <style>
-    body {
-      font-family: "Inter", monospace, monospace;
-    }
-    /* Scrollbar for code blocks */
-    pre::-webkit-scrollbar {
-      height: 8px;
-    }
-    pre::-webkit-scrollbar-track {
-      background: #1f2937; /* Tailwind zinc-800 */
-    }
-    pre::-webkit-scrollbar-thumb {
-      background: #4b5563; /* Tailwind zinc-600 */
-      border-radius: 4px;
-    }
-  </style>
-</head>
-<body class="bg-zinc-900 text-zinc-100 min-h-screen flex flex-col">
-
-  <!-- Navbar -->
-  <header class="bg-zinc-800 border-b border-zinc-700 sticky top-0 z-50">
-    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2 text-2xl font-bold text-white hover:text-red-400 transition">
-        <i data-lucide="box" class="w-8 h-8"></i>
-        Nocons Icon Library
-      </a>
-      <a href="https://github.com/deadhoes/nocons" target="_blank" rel="noopener" class="text-zinc-400 hover:text-red-400 transition flex items-center gap-1">
-        <i data-lucide="github" class="w-6 h-6"></i> GitHub
-      </a>
-    </nav>
-  </header>
-
-  <main class="flex-grow max-w-6xl mx-auto px-6 py-10 w-full">
-
-    <h1 class="text-4xl font-extrabold mb-8 text-white">Documentation</h1>
-
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold mb-4 flex items-center gap-3">
-        <i data-lucide="code" class="w-6 h-6 text-red-400"></i> Usage Example
-      </h2>
-      <p class="mb-3 text-zinc-300 leading-relaxed max-w-prose">
-        You can load the icon Lua scripts directly in Roblox using <code class="bg-zinc-800 px-1 rounded">loadstring</code> and <code class="bg-zinc-800 px-1 rounded">game:HttpGet</code>. Replace <code class="bg-zinc-800 px-1 rounded">iconname</code> with the icon you want:
-      </p>
-
-      <pre class="bg-zinc-950 rounded-lg p-6 text-green-400 overflow-x-auto text-sm font-mono select-all relative">
-<code>loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/iconname.lua"))()</code>
-<button onclick="copyCode(this)" class="absolute top-3 right-3 bg-zinc-700 hover:bg-zinc-600 text-xs px-2 py-1 rounded">Copy</button>
-      </pre>
-    </section>
-
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold mb-4 flex items-center gap-3">
-        <i data-lucide="layers" class="w-6 h-6 text-red-400"></i> Available Icons
-      </h2>
-
-      <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl">
-        <!-- Icon item -->
-        <li class="bg-zinc-800 border border-zinc-700 rounded-lg p-4 flex items-center gap-4 hover:border-red-400 transition cursor-pointer select-text" onclick="copyIcon('heart')">
-          <i data-lucide="heart" class="w-7 h-7 text-red-500"></i>
-          <div>
-            <p class="font-semibold text-white">Heart</p>
-            <p class="text-zinc-400 text-xs">loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/heart.lua"))()</p>
-          </div>
-        </li>
-        <li class="bg-zinc-800 border border-zinc-700 rounded-lg p-4 flex items-center gap-4 hover:border-red-400 transition cursor-pointer select-text" onclick="copyIcon('fire')">
-          <i data-lucide="flame" class="w-7 h-7 text-orange-500"></i>
-          <div>
-            <p class="font-semibold text-white">Fire</p>
-            <p class="text-zinc-400 text-xs">loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/fire.lua"))()</p>
-          </div>
-        </li>
-        <!-- Buraya yeni ikonlar eklenebilir -->
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="text-2xl font-semibold mb-4 flex items-center gap-3">
-        <i data-lucide="download" class="w-6 h-6 text-red-400"></i> Loader Script (Optional)
-      </h2>
-      <p class="mb-3 text-zinc-300 max-w-prose leading-relaxed">
-        Instead of calling individual icons directly, you can load this <code class="bg-zinc-800 px-1 rounded">loader.lua</code> script and use it to load any icon by name:
-      </p>
-      <pre class="bg-zinc-950 rounded-lg p-6 text-green-400 overflow-x-auto text-sm font-mono select-all relative">
-<code>local loadIcon = loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/loader.lua"))()
-loadIcon("heart")</code>
-<button onclick="copyCode(this)" class="absolute top-3 right-3 bg-zinc-700 hover:bg-zinc-600 text-xs px-2 py-1 rounded">Copy</button>
-      </pre>
-    </section>
-
-  </main>
-
-  <footer class="bg-zinc-800 border-t border-zinc-700 py-6 mt-auto text-center text-zinc-400 text-sm select-none">
-    © 2025 deadhoes | Built with TailwindCSS & Lucide Icons
-  </footer>
-
-  <script>
-    window.onload = () => lucide.createIcons();
-
-    function copyCode(button) {
-      const codeBlock = button.previousElementSibling;
-      navigator.clipboard.writeText(codeBlock.textContent.trim()).then(() => {
-        button.textContent = "Copied!";
-        setTimeout(() => (button.textContent = "Copy"), 1500);
-      });
-    }
-
-    function copyIcon(name) {
-      const code = `loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/${name}.lua"))()`;
-      navigator.clipboard.writeText(code).then(() => {
-        alert(`Copied icon load command for "${name}"!`);
-      });
-    }
-  </script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8" />
-  <title>Nocons Icon Library Docs</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script type="module" src="https://unpkg.com/lucide@latest/dist/esm/lucide.js"></script>
-  <style>
-    body {
-      font-family: "Inter", monospace, monospace;
-    }
-    /* Scrollbar for code blocks */
-    pre::-webkit-scrollbar {
-      height: 8px;
-    }
-    pre::-webkit-scrollbar-track {
-      background: #1f2937; /* Tailwind zinc-800 */
-    }
-    pre::-webkit-scrollbar-thumb {
-      background: #4b5563; /* Tailwind zinc-600 */
-      border-radius: 4px;
-    }
-  </style>
-</head>
-<body class="bg-zinc-900 text-zinc-100 min-h-screen flex flex-col">
-
-  <!-- Navbar -->
-  <header class="bg-zinc-800 border-b border-zinc-700 sticky top-0 z-50">
-    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2 text-2xl font-bold text-white hover:text-red-400 transition">
-        <i data-lucide="box" class="w-8 h-8"></i>
-        Nocons Icon Library
-      </a>
-      <a href="https://github.com/deadhoes/nocons" target="_blank" rel="noopener" class="text-zinc-400 hover:text-red-400 transition flex items-center gap-1">
-        <i data-lucide="github" class="w-6 h-6"></i> GitHub
-      </a>
-    </nav>
-  </header>
-
-  <main class="flex-grow max-w-6xl mx-auto px-6 py-10 w-full">
-
-    <h1 class="text-4xl font-extrabold mb-8 text-white">Documentation</h1>
-
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold mb-4 flex items-center gap-3">
-        <i data-lucide="code" class="w-6 h-6 text-red-400"></i> Usage Example
-      </h2>
-      <p class="mb-3 text-zinc-300 leading-relaxed max-w-prose">
-        You can load the icon Lua scripts directly in Roblox using <code class="bg-zinc-800 px-1 rounded">loadstring</code> and <code class="bg-zinc-800 px-1 rounded">game:HttpGet</code>. Replace <code class="bg-zinc-800 px-1 rounded">iconname</code> with the icon you want:
-      </p>
-
-      <pre class="bg-zinc-950 rounded-lg p-6 text-green-400 overflow-x-auto text-sm font-mono select-all relative">
-<code>loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/iconname.lua"))()</code>
-<button onclick="copyCode(this)" class="absolute top-3 right-3 bg-zinc-700 hover:bg-zinc-600 text-xs px-2 py-1 rounded">Copy</button>
-      </pre>
-    </section>
-
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold mb-4 flex items-center gap-3">
-        <i data-lucide="layers" class="w-6 h-6 text-red-400"></i> Available Icons
-      </h2>
-
-      <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl">
-        <!-- Icon item -->
-        <li class="bg-zinc-800 border border-zinc-700 rounded-lg p-4 flex items-center gap-4 hover:border-red-400 transition cursor-pointer select-text" onclick="copyIcon('heart')">
-          <i data-lucide="heart" class="w-7 h-7 text-red-500"></i>
-          <div>
-            <p class="font-semibold text-white">Heart</p>
-            <p class="text-zinc-400 text-xs">loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/heart.lua"))()</p>
-          </div>
-        </li>
-        <li class="bg-zinc-800 border border-zinc-700 rounded-lg p-4 flex items-center gap-4 hover:border-red-400 transition cursor-pointer select-text" onclick="copyIcon('fire')">
-          <i data-lucide="flame" class="w-7 h-7 text-orange-500"></i>
-          <div>
-            <p class="font-semibold text-white">Fire</p>
-            <p class="text-zinc-400 text-xs">loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/fire.lua"))()</p>
-          </div>
-        </li>
-        <!-- Buraya yeni ikonlar eklenebilir -->
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="text-2xl font-semibold mb-4 flex items-center gap-3">
-        <i data-lucide="download" class="w-6 h-6 text-red-400"></i> Loader Script (Optional)
-      </h2>
-      <p class="mb-3 text-zinc-300 max-w-prose leading-relaxed">
-        Instead of calling individual icons directly, you can load this <code class="bg-zinc-800 px-1 rounded">loader.lua</code> script and use it to load any icon by name:
-      </p>
-      <pre class="bg-zinc-950 rounded-lg p-6 text-green-400 overflow-x-auto text-sm font-mono select-all relative">
-<code>local loadIcon = loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/loader.lua"))()
-loadIcon("heart")</code>
-<button onclick="copyCode(this)" class="absolute top-3 right-3 bg-zinc-700 hover:bg-zinc-600 text-xs px-2 py-1 rounded">Copy</button>
-      </pre>
-    </section>
-
-  </main>
-
-  <footer class="bg-zinc-800 border-t border-zinc-700 py-6 mt-auto text-center text-zinc-400 text-sm select-none">
-    © 2025 deadhoes | Built with TailwindCSS & Lucide Icons
-  </footer>
-
-  <script>
-    window.onload = () => lucide.createIcons();
-
-    function copyCode(button) {
-      const codeBlock = button.previousElementSibling;
-      navigator.clipboard.writeText(codeBlock.textContent.trim()).then(() => {
-        button.textContent = "Copied!";
-        setTimeout(() => (button.textContent = "Copy"), 1500);
-      });
-    }
-
-    function copyIcon(name) {
-      const code = `loadstring(game:HttpGet("https://raw.githubusercontent.com/deadhoes/nocons/main/icons/${name}.lua"))()`;
-      navigator.clipboard.writeText(code).then(() => {
-        alert(`Copied icon load command for "${name}"!`);
-      });
-    }
-  </script>
-
+    <script>
+        // Simple search functionality would go here
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.querySelector('input[type="text"]');
+            const iconCards = document.querySelectorAll('.icon-card');
+            
+            searchInput.addEventListener('input', function(e) {
+                const searchTerm = e.target.value.toLowerCase();
+                
+                iconCards.forEach(card => {
+                    const iconName = card.querySelector('div:nth-child(2)').textContent.toLowerCase();
+                    if (iconName.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
